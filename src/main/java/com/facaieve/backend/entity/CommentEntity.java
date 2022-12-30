@@ -14,6 +14,9 @@ public class CommentEntity {
     @ManyToOne
     @JoinColumn(name = "portfolio_id")
     private PortfolioEntity portfolioEntity;
-
+    Long userId;
     String commentBody;
+    String postType;
+    Long postId;
+    int pick;
 }
