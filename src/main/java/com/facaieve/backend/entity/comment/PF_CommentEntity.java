@@ -24,7 +24,7 @@ public class PF_CommentEntity extends CommentEntity{
 
     @ManyToOne
     @JoinColumn(name = "portfolio_Id")
-    private FashionPickupEntity fashionPickupEntity;
+    private PortfolioEntity portfolioEntity;
 
 
 }

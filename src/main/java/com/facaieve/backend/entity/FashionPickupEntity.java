@@ -1,8 +1,8 @@
 package com.facaieve.backend.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 
 public class FashionPickupEntity extends BaseEntity{
 
@@ -18,11 +18,12 @@ public class FashionPickupEntity extends BaseEntity{
 
     Long userId;
 
-    int myPick;
-
     Long commentId;
 
     String tag;
 
     Long categoryId;
+
+    @OneToMany(mappedBy = "fashionPickupEntity",fetch = FetchType.LAZY)
+    private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
 }

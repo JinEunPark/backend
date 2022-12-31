@@ -1,8 +1,13 @@
 package com.facaieve.backend.entity;
 
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class FundingEntity extends BaseEntity{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long fundingId;
 
     String title;
@@ -13,7 +18,7 @@ public class FundingEntity extends BaseEntity{
 
     String commentId;
 
-    int myPick;
+
 
     Long fashionPickUpId;
 
@@ -22,5 +27,9 @@ public class FundingEntity extends BaseEntity{
     Long targetPrice;
 
     Long fundedPrice;
+
+
+    @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
+    private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
 
 }
