@@ -1,19 +1,29 @@
 package com.facaieve.backend.entity;
 
+
 import com.facaieve.backend.Constant.State;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+
+
+@NoArgsConstructor
 @Entity
-public class WithdrawalEntity extends BaseEntity {
+@Getter
+@Setter
+public class WithdrawalEntity extends BaseEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     String withdrawalId;
 
-    State withdrawal;
+    @ManyToOne
+    @JoinColumn(name="user_Id")
+    Long withdrawalUserId;
 
-    @OneToOne
-    User withdrawalUserId;//이게 의미 하는 바가 부정확합니다
-
-    State withdrawalState;//enum class 생성함 확인 바람
+    String withdrawalState;
 
     @OneToOne
     private User userId;

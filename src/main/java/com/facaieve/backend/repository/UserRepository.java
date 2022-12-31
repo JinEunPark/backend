@@ -1,7 +1,7 @@
 package com.facaieve.backend.repository;
 
-import com.facaieve.backend.entity.User;
+import com.facaieve.backend.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 }

@@ -1,11 +1,16 @@
 package com.facaieve.backend.entity;
 
+
+import com.facaieve.backend.entity.comment.FP_CommentEntity;
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 @Entity
-public class FashionPickupEntity extends BaseEntity {
+public class FashionPickupEntity extends BaseEntity{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long fashionPickUpId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -20,10 +25,14 @@ public class FashionPickupEntity extends BaseEntity {
 
     int views;
 
+    @OneToMany(mappedBy = "fashionPickupEntity",fetch = FetchType.LAZY)
+    private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();  // 패션픽업 - 마이픽 매핑
+
+    @OneToMany(mappedBy = "fashionPickupEntity",fetch = FetchType.LAZY)
+    private ArrayList<FP_CommentEntity> commentList = new ArrayList<FP_CommentEntity>();  // 패션픽업 - FP 댓글 매핑
+
     @OneToOne
     User userId;
-
-    int myPick;
 
     @OneToMany
     List<PortfolioCommentEntity> commentId = new ArrayList<>();
@@ -34,4 +43,5 @@ public class FashionPickupEntity extends BaseEntity {
 
     @OneToOne
     CategoryEntity categoryId;
+
 }

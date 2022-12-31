@@ -22,4 +22,5 @@ public class FollowingEntity {
 
     @OneToMany
     List<User> FollowerUserId = new ArrayList<>();
+
 }
