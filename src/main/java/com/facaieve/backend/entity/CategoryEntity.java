@@ -14,7 +14,7 @@ import jakarta.persistence.*;
 public class CategoryEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     Long categoryId;
 

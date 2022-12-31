@@ -6,8 +6,8 @@ import jakarta.persistence.*;
 public class TagEntity extends BaseEntity{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    String tagId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long tagId;
 
     String tagName;
 
@@ -18,6 +18,6 @@ public class TagEntity extends BaseEntity{
     @OneToOne
     FashionPickupEntity fashionPickup;
 
-    @OneToOne
+    @ManyToOne
     FundingEntity funding;
 }

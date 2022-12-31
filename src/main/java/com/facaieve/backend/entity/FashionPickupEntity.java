@@ -1,7 +1,7 @@
 package com.facaieve.backend.entity;
 
 
-import com.facaieve.backend.entity.comment.FP_CommentEntity;
+import com.facaieve.backend.entity.comment.FashionPickupCommentEntity;
 import jakarta.persistence.*;
 
 import java.util.*;
@@ -10,11 +10,7 @@ public class FashionPickupEntity extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long fashionPickUpId;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    String fashionPickupEntityId;
+    Long fashionPickupEntityId;
 
     @OneToOne
     PortfolioEntity portfolioId;
@@ -29,13 +25,11 @@ public class FashionPickupEntity extends BaseEntity{
     private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();  // 패션픽업 - 마이픽 매핑
 
     @OneToMany(mappedBy = "fashionPickupEntity",fetch = FetchType.LAZY)
-    private ArrayList<FP_CommentEntity> commentList = new ArrayList<FP_CommentEntity>();  // 패션픽업 - FP 댓글 매핑
+    private ArrayList<FashionPickupCommentEntity> commentList = new ArrayList<FashionPickupCommentEntity>();  // 패션픽업 - FP 댓글 매핑
 
     @OneToOne
-    User userId;
+    UserEntity userEntityId;
 
-    @OneToMany
-    List<PortfolioCommentEntity> commentId = new ArrayList<>();
 
     @OneToOne(mappedBy = "fashionPickup")
     @JoinColumn(name = "tagId")

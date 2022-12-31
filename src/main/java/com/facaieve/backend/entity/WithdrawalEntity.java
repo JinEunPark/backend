@@ -1,31 +1,26 @@
 package com.facaieve.backend.entity;
 
 
-import com.facaieve.backend.Constant.State;
+import com.facaieve.backend.Constant.UserActive;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 
 @NoArgsConstructor
 @Entity
-@Getter
-@Setter
-public class WithdrawalEntity extends BaseEntity{
+@Data
+public class WithdrawalEntity extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    String withdrawalId;
-
-    @ManyToOne
-    @JoinColumn(name="user_Id")
-    Long withdrawalUserId;
-
-    String withdrawalState;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long withdrawalId;
 
     @OneToOne
-    private User userId;
+    @JoinColumn(name = "user_Id")
+    UserEntity withdrawalUserIdEntity;
+
+    @Enumerated(value = EnumType.STRING)
+    UserActive userActive;
 
 }

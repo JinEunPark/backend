@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class FP_CommentEntity extends CommentEntity{
+public class FashionPickupCommentEntity extends CommentEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +25,15 @@ public class FP_CommentEntity extends CommentEntity{
     String postType;
     Long postId;
 
-    @OneToMany(mappedBy = "fp_commentEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "fashionPickupCommentEntity", cascade = CascadeType.ALL)
     private List<MyPickEntity> myPickEntity = new ArrayList<>();;   // FP 댓글 - 마이픽 매핑
 
     @ManyToOne
-    @JoinColumn(name = "fashionPickUp_Id")
+    @JoinColumn(name = "fashionPickUpEntity")
     private FashionPickupEntity fashionPickupEntity;  // FP 댓글 - 패션픽업 매핑
 
     @ManyToOne
-    @JoinColumn(name = "user_Id")
-    UserEntity UserEntity;
+    @JoinColumn(name = "userEntity")
+    UserEntity userEntity;
 
 }

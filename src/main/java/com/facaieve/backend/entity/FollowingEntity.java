@@ -11,16 +11,16 @@ import java.util.List;
 public class FollowingEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    String followId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long followId;
 
     @OneToOne
-    User mainUserId;
+    UserEntity mainUserIdEntity;
 
     @OneToMany
-    List<User> followUserId = new ArrayList<>();
+    List<UserEntity> followUserIdEntity = new ArrayList<>();
 
     @OneToMany
-    List<User> FollowerUserId = new ArrayList<>();
+    List<UserEntity> followerUserIdEntity = new ArrayList<>();
 
 }

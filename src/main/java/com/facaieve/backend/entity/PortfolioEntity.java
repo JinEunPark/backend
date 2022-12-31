@@ -1,7 +1,6 @@
 package com.facaieve.backend.entity;
 
-import com.facaieve.backend.entity.comment.CommentEntity;
-import com.facaieve.backend.entity.comment.PF_CommentEntity;
+import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,7 +30,7 @@ public class PortfolioEntity extends BaseEntity {
     private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
 
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
-    private ArrayList<PF_CommentEntity> commentList = new ArrayList<PF_CommentEntity>();
+    private ArrayList<PortfolioCommentEntity> commentList = new ArrayList<PortfolioCommentEntity>();
 
     @OneToOne(mappedBy = "portfolio")
     CategoryEntity category;
