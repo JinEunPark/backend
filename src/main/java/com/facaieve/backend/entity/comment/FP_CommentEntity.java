@@ -26,11 +26,11 @@ public class FP_CommentEntity extends CommentEntity{
     Long postId;
 
     @OneToMany(mappedBy = "fp_commentEntity", cascade = CascadeType.ALL)
-    private List<MyPickEntity> myPickEntity = new ArrayList<>();;
+    private List<MyPickEntity> myPickEntity = new ArrayList<>();;   // FP 댓글 - 마이픽 매핑
 
     @ManyToOne
     @JoinColumn(name = "fashionPickUp_Id")
-    private FashionPickupEntity fashionPickupEntity;
+    private FashionPickupEntity fashionPickupEntity;  // FP 댓글 - 패션픽업 매핑
 
     @ManyToOne
     @JoinColumn(name = "user_Id")

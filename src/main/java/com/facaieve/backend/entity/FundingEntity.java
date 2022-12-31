@@ -1,5 +1,7 @@
 package com.facaieve.backend.entity;
 
+import com.facaieve.backend.entity.comment.FP_CommentEntity;
+import com.facaieve.backend.entity.comment.Fund_CommentEntity;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -31,5 +33,8 @@ public class FundingEntity extends BaseEntity{
 
     @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
     private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
+
+    @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
+    private ArrayList<Fund_CommentEntity> commentList = new ArrayList<Fund_CommentEntity>();  // 펀딩 엔티티 - 펀딩 댓글 매핑
 
 }
