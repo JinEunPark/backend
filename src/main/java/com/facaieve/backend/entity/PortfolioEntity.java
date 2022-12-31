@@ -27,14 +27,16 @@ public class PortfolioEntity extends BaseEntity {
 
     int pick;
 
-    Long category;
-
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
     private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
 
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
     private ArrayList<PF_CommentEntity> commentList = new ArrayList<PF_CommentEntity>();
 
+    @OneToOne(mappedBy = "portfolio")
+    CategoryEntity category;
 
+    @OneToOne(mappedBy = "portfolio")
+    TagEntity tagEntity;
 
 }

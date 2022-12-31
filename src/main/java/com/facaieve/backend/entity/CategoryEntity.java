@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import jakarta.persistence.*;
 
 @Entity
 @Getter
@@ -13,8 +14,12 @@ import lombok.Setter;
 public class CategoryEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
     Long categoryId;
 
     String categoryName;
+
+    @OneToOne
+    PortfolioEntity portfolio;
 }

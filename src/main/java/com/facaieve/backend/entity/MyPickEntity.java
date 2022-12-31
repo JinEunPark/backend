@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class MyPickEntity extends BaseEntity{
+public class MyPickEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +31,6 @@ public class MyPickEntity extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "pf_comment_Id")
     private PF_CommentEntity pf_commentEntity;
-
-
 
 
     @ManyToOne
