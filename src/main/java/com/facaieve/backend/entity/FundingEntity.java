@@ -1,17 +1,36 @@
 package com.facaieve.backend.entity;
 
-import java.util.Date;
+import jakarta.persistence.*;
 
+import java.util.Date;
+@Entity
 public class FundingEntity extends BaseEntity{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long fundingId;
+
     String title;
+
     String Body;
-    Long userId;
+
+    @OneToOne
+    User userId;
+
     String commentId;
     int myPick;
-    Long fashionPickUpId;
+
+    @OneToOne
+    FashionPickupEntity fashionPickUpId;
+
+
+    @OneToOne(mappedBy = "funding")
+    @JoinColumn(name = "tagId")
+    TagEntity tag;
+
     Date dueDate;
-    Long targetPrice;
-    Long fundedPrice;
+
+    Long targetPrice;//펀딩 목표금액
+
+    Long fundedPrice;//펀딩된 현재 금액
 
 }

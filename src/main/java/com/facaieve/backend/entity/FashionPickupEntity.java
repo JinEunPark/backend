@@ -1,13 +1,37 @@
 package com.facaieve.backend.entity;
 
-public class FashionPickupEntity extends BaseEntity{
-    Long portfolioId;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+@Entity
+public class FashionPickupEntity extends BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    String fashionPickupEntityId;
+
+    @OneToOne
+    PortfolioEntity portfolioId;
+
     String title;
+
     String body;
+
     int views;
-    Long userId;
+
+    @OneToOne
+    User userId;
+
     int myPick;
-    Long commentId;
-    String tag;
-    Long categoryId;
+
+    @OneToMany
+    List<PortfolioCommentEntity> commentId = new ArrayList<>();
+
+    @OneToOne(mappedBy = "fashionPickup")
+    @JoinColumn(name = "tagId")
+    TagEntity tag;
+
+    @OneToOne
+    CategoryEntity categoryId;
 }

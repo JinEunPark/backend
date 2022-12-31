@@ -16,14 +16,21 @@ public class PortfolioEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long portfolioId;
+
     String title;
+
     String body;
+
     int views;
 
     int pick;
 
-    @OneToMany(mappedBy = "portfolio",fetch = FetchType.LAZY)
-    private ArrayList<CommentEntity> comments = new ArrayList<CommentEntity>();
-    Long category;
+    @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
+    private ArrayList<PortfolioCommentEntity> comments = new ArrayList<PortfolioCommentEntity>();
 
+    @OneToOne(mappedBy = "portfolio")
+    CategoryEntity category;
+
+    @OneToOne(mappedBy = "portfolio")
+    TagEntity tagEntity;
 }

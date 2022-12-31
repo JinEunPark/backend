@@ -1,14 +1,12 @@
 package com.facaieve.backend.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-
+@NoArgsConstructor
 
 public class User extends BaseEntity {
     @Id
@@ -23,7 +21,7 @@ public class User extends BaseEntity {
     String career;
     String education;
     String Company;
-    String withdrawal;
-
+    @OneToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "userId")
+    WithdrawalEntity withdrawalEntity;
 
 }
