@@ -1,5 +1,6 @@
-package com.facaieve.backend.entity;
+package com.facaieve.backend.entity.user;
 
+import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
@@ -14,13 +15,10 @@ public class FollowingEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     String followId;
 
-    @OneToOne
-    User mainUserId;
+    @OneToMany
+    List<UserEntity> followUserId = new ArrayList<>();
 
     @OneToMany
-    List<User> followUserId = new ArrayList<>();
-
-    @OneToMany
-    List<User> FollowerUserId = new ArrayList<>();
+    List<UserEntity> FollowerUserId = new ArrayList<>();
 
 }

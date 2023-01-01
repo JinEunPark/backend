@@ -1,7 +1,9 @@
-package com.facaieve.backend.entity;
+package com.facaieve.backend.entity.post;
 
-import com.facaieve.backend.entity.comment.CommentEntity;
-import com.facaieve.backend.entity.comment.PF_CommentEntity;
+import com.facaieve.backend.entity.basetime.BaseEntity;
+import com.facaieve.backend.entity.MyPickEntity;
+import com.facaieve.backend.entity.TagEntity;
+import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +19,7 @@ public class PortfolioEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long portfolioId;
+    Long portfolioEntityId;
 
     String title;
 
@@ -25,18 +27,13 @@ public class PortfolioEntity extends BaseEntity {
 
     int views;
 
-    int pick;
-
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
     private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
 
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
-    private ArrayList<PF_CommentEntity> commentList = new ArrayList<PF_CommentEntity>();
+    private ArrayList<PortfolioCommentEntity> commentList = new ArrayList<PortfolioCommentEntity>();
 
-    @OneToOne(mappedBy = "portfolio")
-    CategoryEntity category;
-
-    @OneToOne(mappedBy = "portfolio")
-    TagEntity tagEntity;
+    @OneToMany(mappedBy = "portfolioEntity", cascade = CascadeType.ALL)
+    private ArrayList<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 태그 매핑
 
 }

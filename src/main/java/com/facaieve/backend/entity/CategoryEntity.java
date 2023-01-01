@@ -1,5 +1,7 @@
 package com.facaieve.backend.entity;
 
+import com.facaieve.backend.entity.post.FashionPickupEntity;
+import com.facaieve.backend.entity.post.FundingEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +22,11 @@ public class CategoryEntity {
 
     String categoryName;
 
-    @OneToOne
-    PortfolioEntity portfolio;
+    @ManyToOne
+    @JoinColumn(name = "fashion_Pickup_Entity_Id")
+    FashionPickupEntity fashionPickupEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "funding_Entity_Id")
+    FundingEntity fundingEntity;
 }

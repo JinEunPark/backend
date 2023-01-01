@@ -1,4 +1,4 @@
-package com.facaieve.backend.entity;
+package com.facaieve.backend.entity.basetime;
 
 
 import jakarta.persistence.Column;

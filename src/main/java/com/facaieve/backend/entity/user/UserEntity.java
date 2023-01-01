@@ -1,13 +1,12 @@
-package com.facaieve.backend.entity;
+package com.facaieve.backend.entity.user;
 
+import com.facaieve.backend.entity.basetime.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 
 @Entity
 @Data
-
-
 public class UserEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//개별 엔티티 적용
