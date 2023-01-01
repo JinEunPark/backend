@@ -1,12 +1,12 @@
 package com.facaieve.backend.entity;
 
 import com.facaieve.backend.entity.basetime.BaseEntity;
-import com.facaieve.backend.entity.comment.FashionPickUpCommentEntity;
 import com.facaieve.backend.entity.comment.FundingCommentEntity;
 import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
 import com.facaieve.backend.entity.post.PortfolioEntity;
+import com.facaieve.backend.entity.comment.FashionPickUpCommentEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,28 +25,27 @@ public class MyPickEntity extends BaseEntity {
     Long userId;
 
     @ManyToOne
-    @JoinColumn(name = "fp_comment_Id")
-    private FashionPickUpCommentEntity fashionPickUpCommentEntity;
-
+    @JoinColumn(name = "fashionPickupCommentEntity")
+    private FashionPickUpCommentEntity fashionPickupCommentEntity;
     @ManyToOne
-    @JoinColumn(name = "fund_comment_Id")
+    @JoinColumn(name = "fundingCommentEntity")
     private FundingCommentEntity fundingCommentEntity;
 
     @ManyToOne
-    @JoinColumn(name = "pf_comment_Id")
+    @JoinColumn(name = "portfolioCommentEntity")
     private PortfolioCommentEntity portfolioCommentEntity;
 
 
     @ManyToOne
-    @JoinColumn(name = "portfolio_Id")
+    @JoinColumn(name = "portfolioEntity")
     private PortfolioEntity portfolioEntity;
 
     @ManyToOne
-    @JoinColumn(name = "funding_Id")
+    @JoinColumn(name = "fundingEntity")
     private FundingEntity fundingEntity;
 
     @ManyToOne
-    @JoinColumn(name = "fashionPickUp_Id")
+    @JoinColumn(name = "fashionPickUpEntity")
     private FashionPickupEntity fashionPickupEntity;
 
 }

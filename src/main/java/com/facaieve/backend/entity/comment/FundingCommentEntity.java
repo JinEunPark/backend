@@ -1,7 +1,9 @@
 package com.facaieve.backend.entity.comment;
 
+
 import com.facaieve.backend.entity.post.FundingEntity;
 import com.facaieve.backend.entity.MyPickEntity;
+import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
@@ -13,9 +15,8 @@ import java.util.List;
 public class FundingCommentEntity extends CommentEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long fund_commentId;
+    Long fundingCommentId;
 
-    Long userId;
     String commentBody;
     String postType;
     Long postId;

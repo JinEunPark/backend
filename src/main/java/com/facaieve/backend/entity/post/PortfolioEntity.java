@@ -5,14 +5,13 @@ import com.facaieve.backend.entity.MyPickEntity;
 import com.facaieve.backend.entity.TagEntity;
 import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class PortfolioEntity extends BaseEntity {

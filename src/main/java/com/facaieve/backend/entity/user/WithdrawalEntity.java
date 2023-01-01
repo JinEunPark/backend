@@ -1,5 +1,6 @@
 package com.facaieve.backend.entity.user;
 
+import com.facaieve.backend.Constant.UserActive;
 import com.facaieve.backend.entity.basetime.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -17,7 +18,12 @@ public class WithdrawalEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long withdrawalId;
 
-    String withdrawalState;
+    @OneToOne
+    @JoinColumn(name = "user_Id")
+    UserEntity withdrawalUserIdEntity;
+
+    @Enumerated(value = EnumType.STRING)
+    UserActive userActive;
 
 
 }

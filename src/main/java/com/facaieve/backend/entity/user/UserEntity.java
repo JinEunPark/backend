@@ -1,12 +1,17 @@
 package com.facaieve.backend.entity.user;
 
+
 import com.facaieve.backend.entity.basetime.BaseEntity;
+import com.facaieve.backend.Constant.UserActive;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class UserEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//개별 엔티티 적용
@@ -31,24 +36,9 @@ public class UserEntity extends BaseEntity {
     String Company;
 
     @Enumerated(value = EnumType.STRING)
-    @Column(name = "is_Activated")
-    private UserActive isUserActive =  UserActive.Active;
+    UserActive userActive;
 
-
-    public enum UserActive {
-
-        Active("활동 회원"),
-        UnActive("휴면 회원"),
-        Withdrawal("탈퇴 회원");
-
-        @Getter
-        private final String isActive;
-
-
-        UserActive(String isActive) {
-            this.isActive =isActive;
-        }
-    }
-
+    @OneToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "withdrawalUserIdEntity")
+    WithdrawalEntity withdrawalEntity;
 
 }
