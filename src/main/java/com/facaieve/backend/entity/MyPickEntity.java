@@ -22,6 +22,7 @@ public class MyPickEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long myPickId;
 
+    @Column
     Long userId;
 
     @ManyToOne

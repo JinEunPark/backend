@@ -17,9 +17,9 @@ public class CategoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column
     Long categoryId;
-
+    @Column
     String categoryName;
 
     @ManyToOne

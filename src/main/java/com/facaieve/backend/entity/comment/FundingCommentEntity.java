@@ -16,9 +16,11 @@ public class FundingCommentEntity extends CommentEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long fundingCommentId;
-
+    @Column
     String commentBody;
+    @Column
     String postType;
+    @Column
     Long postId;
 
 
@@ -29,5 +31,7 @@ public class FundingCommentEntity extends CommentEntity{
     @JoinColumn(name = "fundingEntity_Id")
     private FundingEntity fundingEntity;
 
-
+    @ManyToOne
+    @JoinColumn(name = "userEntity_Id")
+    private UserEntity userEntity;  // 유저 - 펀딩 댓글 매핑
 }

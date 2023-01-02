@@ -5,6 +5,7 @@ import com.facaieve.backend.entity.CategoryEntity;
 import com.facaieve.backend.entity.MyPickEntity;
 import com.facaieve.backend.entity.TagEntity;
 import com.facaieve.backend.entity.comment.FundingCommentEntity;
+import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,15 +22,15 @@ public class FundingEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long fundingEntityId;
-
+    @Column
     String title;
-
+    @Column
     String Body;
-
+    @Column
     Date dueDate;
-
+    @Column
     Long targetPrice;//펀딩 목표금액
-
+    @Column
     Long fundedPrice;//펀딩된 현재 금액
 
 
@@ -45,5 +46,7 @@ public class FundingEntity extends BaseEntity {
     @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
     private ArrayList<CategoryEntity> categoryEntities = new ArrayList<CategoryEntity>();  // 펀딩 - 카테코리 매핑
 
-
+    @ManyToOne
+    @JoinColumn(name = "userEntity_Id")
+    private UserEntity userEntity;  // 유저 - 펀딩  매핑
 }

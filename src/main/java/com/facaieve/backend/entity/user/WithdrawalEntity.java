@@ -18,9 +18,8 @@ public class WithdrawalEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long withdrawalId;
 
-    @OneToOne
-    @JoinColumn(name = "user_Id")
-    UserEntity withdrawalUserIdEntity;
+    @OneToOne(mappedBy = "withdrawalEntity")
+    UserEntity withdrawalUserEntity;
 
     @Enumerated(value = EnumType.STRING)
     UserActive userActive;

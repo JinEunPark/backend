@@ -18,9 +18,9 @@ public class TagEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long tagId;
-
+    @Column
     String tagName;
-
+    @Column
     String description;
 
     @ManyToOne

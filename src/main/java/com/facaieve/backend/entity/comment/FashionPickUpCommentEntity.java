@@ -2,6 +2,7 @@ package com.facaieve.backend.entity.comment;
 
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.MyPickEntity;
+import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,9 +18,11 @@ public class FashionPickUpCommentEntity extends CommentEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long fashionPickupCommentEntityId;
-
+    @Column
     String commentBody;
+    @Column
     String postType;
+    @Column
     Long postId;
 
     @OneToMany(mappedBy = "fashionPickupCommentEntity", cascade = CascadeType.ALL)
@@ -28,6 +31,11 @@ public class FashionPickUpCommentEntity extends CommentEntity{
     @ManyToOne
     @JoinColumn(name = "fashionPickUpEntity_Id")
     private FashionPickupEntity fashionPickupEntity;  // FP 댓글 - 패션픽업 매핑
+
+    // 유저 매핑
+    @ManyToOne
+    @JoinColumn(name = "userEntity_Id")
+    private UserEntity userEntity;  // 유저 - 패션픽업 댓글 매핑
 
 
 }
