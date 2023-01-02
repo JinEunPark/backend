@@ -8,7 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Data
 public class testEnity {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "test")
-    String testId;
+    Long testId;
 }

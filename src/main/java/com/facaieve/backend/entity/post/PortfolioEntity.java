@@ -1,30 +1,31 @@
-package com.facaieve.backend.entity;
+package com.facaieve.backend.entity.post;
 
+import com.facaieve.backend.entity.basetime.BaseEntity;
+import com.facaieve.backend.entity.MyPickEntity;
+import com.facaieve.backend.entity.TagEntity;
 import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
+import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class PortfolioEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long portfolioId;
-
+    Long portfolioEntityId;
+    @Column
     String title;
-
+    @Column
     String body;
-
+    @Column
     int views;
-
-    int pick;
 
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
     private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
@@ -32,10 +33,11 @@ public class PortfolioEntity extends BaseEntity {
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
     private ArrayList<PortfolioCommentEntity> commentList = new ArrayList<PortfolioCommentEntity>();
 
-    @OneToOne(mappedBy = "portfolio")
-    CategoryEntity category;
+    @OneToMany(mappedBy = "portfolioEntity", cascade = CascadeType.ALL)
+    private ArrayList<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 태그 매핑
 
-    @OneToOne(mappedBy = "portfolio")
-    TagEntity tagEntity;
+    @ManyToOne
+    @JoinColumn(name = "userEntity_Id")
+    private UserEntity userEntity;  // 유저 - 포트폴리오  매핑
 
 }

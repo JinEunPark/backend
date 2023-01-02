@@ -1,8 +1,12 @@
 package com.facaieve.backend.entity;
 
-import com.facaieve.backend.entity.comment.FashionPickupCommentEntity;
+import com.facaieve.backend.entity.basetime.BaseEntity;
 import com.facaieve.backend.entity.comment.FundingCommentEntity;
 import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
+import com.facaieve.backend.entity.post.FashionPickupEntity;
+import com.facaieve.backend.entity.post.FundingEntity;
+import com.facaieve.backend.entity.post.PortfolioEntity;
+import com.facaieve.backend.entity.comment.FashionPickUpCommentEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,12 +22,12 @@ public class MyPickEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long myPickId;
 
+    @Column
     Long userId;
 
     @ManyToOne
     @JoinColumn(name = "fashionPickupCommentEntity")
-    private FashionPickupCommentEntity fashionPickupCommentEntity;
-
+    private FashionPickUpCommentEntity fashionPickupCommentEntity;
     @ManyToOne
     @JoinColumn(name = "fundingCommentEntity")
     private FundingCommentEntity fundingCommentEntity;
