@@ -1,4 +1,4 @@
-package com.facaieve.backend.entity;
+package com.facaieve.backend.entity.etc;
 
 import com.facaieve.backend.entity.basetime.BaseEntity;
 import com.facaieve.backend.entity.comment.FundingCommentEntity;

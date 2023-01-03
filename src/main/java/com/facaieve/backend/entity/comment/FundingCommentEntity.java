@@ -2,7 +2,7 @@ package com.facaieve.backend.entity.comment;
 
 
 import com.facaieve.backend.entity.post.FundingEntity;
-import com.facaieve.backend.entity.MyPickEntity;
+import com.facaieve.backend.entity.etc.MyPickEntity;
 import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
