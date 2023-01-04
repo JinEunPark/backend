@@ -2,10 +2,13 @@ package com.facaieve.backend;
 
 import com.facaieve.backend.dto.UserDto;
 import com.facaieve.backend.entity.user.UserEntity;
+import com.facaieve.backend.stubDate.UserStubData;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
+
+    UserEntity userStubEntityToToUserEntity(UserStubData userStubData);
 
     UserEntity userPostDtoToUserEntity(UserDto.PostUserDto postUserDto);
 
