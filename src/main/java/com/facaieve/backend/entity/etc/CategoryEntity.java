@@ -1,27 +1,26 @@
-package com.facaieve.backend.entity;
+package com.facaieve.backend.entity.etc;
 
-import com.facaieve.backend.entity.basetime.BaseEntity;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
-import com.facaieve.backend.entity.post.PortfolioEntity;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.persistence.*;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-public class TagEntity extends BaseEntity {
+public class CategoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long tagId;
     @Column
-    String tagName;
+    Long categoryId;
     @Column
-    String description;
+    String categoryName;
 
     @ManyToOne
     @JoinColumn(name = "fashion_Pickup_Entity_Id")
@@ -30,9 +29,4 @@ public class TagEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "funding_Entity_Id")
     FundingEntity fundingEntity;
-
-    @ManyToOne
-    @JoinColumn(name = "portfolio_Entity_Id")
-    PortfolioEntity portfolioEntity;
-
 }

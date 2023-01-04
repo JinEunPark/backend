@@ -1,8 +1,8 @@
 package com.facaieve.backend.entity.post;
 
 import com.facaieve.backend.entity.basetime.BaseEntity;
-import com.facaieve.backend.entity.MyPickEntity;
-import com.facaieve.backend.entity.TagEntity;
+import com.facaieve.backend.entity.etc.MyPickEntity;
+import com.facaieve.backend.entity.etc.TagEntity;
 import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
@@ -33,7 +33,8 @@ public class PortfolioEntity extends BaseEntity {
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
     private ArrayList<PortfolioCommentEntity> commentList = new ArrayList<PortfolioCommentEntity>();
 
-    @OneToMany(mappedBy = "portfolioEntity", fetch = FetchType.LAZY)
+
+    @OneToMany(mappedBy = "portfolioEntity", fetch = FetchType.LAZY) //cascade = CascadeType.ALL
     private ArrayList<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 태그 매핑
 
     @ManyToOne

@@ -6,6 +6,7 @@ spring:
     password: 84948494
   jpa:
     database: mysql   # 추가 해준 부분
+    database-platform: org.hibernate.dialect.MySQL8Dialect #todo 찬일님도 버전에 맞춰서 추가해 주세요
     hibernate:
       ddl-auto: update  # 스키마 자동 생성
     show-sql: true      # SQL 쿼리 출력

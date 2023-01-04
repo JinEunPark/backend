@@ -2,9 +2,9 @@ package com.facaieve.backend.entity.post;
 
 
 import com.facaieve.backend.entity.basetime.BaseEntity;
-import com.facaieve.backend.entity.CategoryEntity;
-import com.facaieve.backend.entity.MyPickEntity;
-import com.facaieve.backend.entity.TagEntity;
+import com.facaieve.backend.entity.etc.CategoryEntity;
+import com.facaieve.backend.entity.etc.MyPickEntity;
+import com.facaieve.backend.entity.etc.TagEntity;
 import com.facaieve.backend.entity.comment.FashionPickUpCommentEntity;
 import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
