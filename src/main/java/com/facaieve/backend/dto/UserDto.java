@@ -32,7 +32,7 @@ public class UserDto {
         UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
         return userEntity;
     }
-
+    @Getter
     public static class PostUserDto{
 
     String displayName;
@@ -50,6 +50,7 @@ public class UserDto {
     }
 
 
+    @Getter
     public static class PatchUserDto{
 
         String displayName;

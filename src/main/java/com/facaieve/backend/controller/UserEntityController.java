@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @AllArgsConstructor
-public class UserController {
+public class UserEntityController {
 
     UserService userService;
 
