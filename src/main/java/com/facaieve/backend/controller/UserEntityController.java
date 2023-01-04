@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RestController
+@RestController("/user")
 @AllArgsConstructor
 public class UserEntityController {
 

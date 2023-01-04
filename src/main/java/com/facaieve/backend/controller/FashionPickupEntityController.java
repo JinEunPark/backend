@@ -3,7 +3,6 @@ package com.facaieve.backend.controller;
 
 import com.facaieve.backend.FashionPickupMapper;
 import com.facaieve.backend.dto.FashionPickupDto;
-import com.facaieve.backend.dto.UserDto;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.service.FashionPickupEntityService;
 import com.facaieve.backend.stubDate.FashionPuckupStubData;
@@ -14,7 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
-@RestController("/FashionPickup")
+@RestController
+@RequestMapping("/fashionpickup")
 @AllArgsConstructor
 public class FashionPickupEntityController {
 
@@ -26,7 +26,7 @@ public class FashionPickupEntityController {
     // 서비스 레이어 구현이 안되어 Stub 데이터로 대체(추후 변경 예정)
 
     @PostMapping("/post")
-    public ResponseEntity postUserEntity(@RequestBody FashionPickupDto.PostFashionPickupDto postFashionPickupDto) {
+    public ResponseEntity postFashionPickupEntity(@RequestBody FashionPickupDto.PostFashionPickupDto postFashionPickupDto) {
 //        FashionPickupEntity postingFashionPickupEntity = fashionPickupMapper.fashionPickupPostDtoToFashionPickupEntity(postFashionPickupDto);
 //        FashionPickupEntity postedFashionPickupEntity = fashionPickupEntityService.createFashionPickupEntity(postingFashionPickupEntity);
 //        return new ResponseEntity( fashionPickupMapper.fashionPickupEntityToResponseFashionPickupEntity(postedFashionPickupEntity), HttpStatus.OK);
@@ -37,7 +37,7 @@ public class FashionPickupEntityController {
     }
 
     @PatchMapping("/patch")
-    public ResponseEntity patchUserEntity(@RequestBody FashionPickupDto.PatchFashionPickupDto patchFashionPickupDto){
+    public ResponseEntity patchFashionPickupEntity(@RequestBody FashionPickupDto.PatchFashionPickupDto patchFashionPickupDto){
 //        FashionPickupEntity patchingFashionPickupEntity = fashionPickupMapper.fashionPickupPatchDtoToFashionPickupEntity(patchFashionPickupDto);
 //        FashionPickupEntity patchedFashionPickupEntity = fashionPickupEntityService.editFashionPickupEntity(patchingFashionPickupEntity);
 //        return new ResponseEntity( fashionPickupMapper.fashionPickupEntityToResponseFashionPickupEntity(patchedFashionPickupEntity), HttpStatus.OK);
@@ -51,7 +51,7 @@ public class FashionPickupEntityController {
     }
 
     @GetMapping("/get")
-    public ResponseEntity patchUserEntity(@RequestBody FashionPickupDto.GetFashionPickupDto getFashionPickupDto){
+    public ResponseEntity getFashionPickupEntity(@RequestBody FashionPickupDto.GetFashionPickupDto getFashionPickupDto){
 //        FashionPickupEntity foundFashionPickupEntity = fashionPickupEntityService.findFashionPickupEntity(getFashionPickupDto.getFashionPickupEntityId());
 //        return new ResponseEntity( fashionPickupMapper.fashionPickupEntityToResponseFashionPickupEntity(foundFashionPickupEntity), HttpStatus.OK);
         log.info("기존 패션픽업 게시글을 가져옵니다.");
@@ -61,7 +61,7 @@ public class FashionPickupEntityController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity patchUserEntity(@RequestBody FashionPickupDto.DeleteFashionPickupDto deleteFashionPickupDto){
+    public ResponseEntity deleteFashionPickupEntity(@RequestBody FashionPickupDto.DeleteFashionPickupDto deleteFashionPickupDto){
 
 //        fashionPickupEntityService.removeFashionPickupEntity(deleteFashionPickupDto.getFashionPickupEntityId());
         log.info("기존 패션픽업 게시글을 삭제합니다.");

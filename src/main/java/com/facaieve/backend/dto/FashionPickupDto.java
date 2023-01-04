@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
-
+@Getter
 public class FashionPickupDto {
 
 
@@ -16,12 +16,15 @@ public class FashionPickupDto {
         String title;
         String body;
     }
+
     @Getter
     public static class PatchFashionPickupDto{
 
+        long fashionPickupEntityId;
         String title;
         String body;
     }
+
     @Getter
     public static class GetFashionPickupDto{
 
