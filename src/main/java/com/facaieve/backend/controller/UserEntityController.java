@@ -1,7 +1,7 @@
 package com.facaieve.backend.controller;
 
 
-import com.facaieve.backend.UserMapper;
+import com.facaieve.backend.mapper.user.UserMapper;
 import com.facaieve.backend.dto.UserDto;
 import com.facaieve.backend.dto.UserDto.PostUserDto;
 import com.facaieve.backend.entity.user.UserEntity;
@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RestController("/user")
+@RestController
+@RequestMapping("/user")
 @AllArgsConstructor
 public class UserEntityController {
 

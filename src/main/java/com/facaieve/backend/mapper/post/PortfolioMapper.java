@@ -1,4 +1,4 @@
-package com.facaieve.backend;
+package com.facaieve.backend.mapper.post;
 
 import com.facaieve.backend.dto.PortfolioDto;
 import com.facaieve.backend.entity.post.PortfolioEntity;

@@ -2,19 +2,17 @@ package com.facaieve.backend.service;
 
 import com.facaieve.backend.entity.user.UserEntity;
 import com.facaieve.backend.repository.user.UserRepository;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
+@AllArgsConstructor
 public class UserService {
 
-    private final UserRepository userRepository;
-
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    UserRepository userRepository;
 
     //입력 값으로 들어온 userEntity 저장 그리고 반환 todo 보안 설정 아직 안함
     public UserEntity create(final UserEntity userEntity){

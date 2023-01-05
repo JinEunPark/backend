@@ -2,6 +2,7 @@ package com.facaieve.backend.service.etc;
 
 import com.facaieve.backend.entity.etc.MyPickEntity;
 import com.facaieve.backend.repository.etc.MyPickRepository;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,8 +11,9 @@ import java.util.List;
 
 @Service
 @Slf4j
+@AllArgsConstructor
 public class MyPickService {
-    @Autowired
+
     MyPickRepository myPickRepository;
 
     public MyPickEntity createMyPick(MyPickEntity myPickEntity){

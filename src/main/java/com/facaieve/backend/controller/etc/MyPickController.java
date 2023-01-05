@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/Mypick")
 public class MyPickController {
 
-    @Autowired
+
     MyPickService myPickService;
     MyPickMapper myPickMapper;
 

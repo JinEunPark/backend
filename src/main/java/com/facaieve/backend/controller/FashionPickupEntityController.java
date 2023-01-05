@@ -1,7 +1,7 @@
 package com.facaieve.backend.controller;
 
 
-import com.facaieve.backend.FashionPickupMapper;
+import com.facaieve.backend.mapper.post.FashionPickupMapper;
 import com.facaieve.backend.dto.FashionPickupDto;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.service.FashionPickupEntityService;

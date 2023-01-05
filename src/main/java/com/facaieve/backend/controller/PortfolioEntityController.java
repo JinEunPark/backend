@@ -1,7 +1,7 @@
 package com.facaieve.backend.controller;
 
 
-import com.facaieve.backend.PortfolioMapper;
+import com.facaieve.backend.mapper.post.PortfolioMapper;
 import com.facaieve.backend.dto.PortfolioDto;
 import com.facaieve.backend.entity.post.PortfolioEntity;
 import com.facaieve.backend.service.PortfolioEntityService;
