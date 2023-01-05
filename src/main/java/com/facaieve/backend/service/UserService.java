@@ -21,7 +21,7 @@ public class UserService {
         }
         final String email = userEntity.getEmail();
 
-        if(userRepository.existsByEmail()){//todo email 로 중복 검사 실행함.
+        if(userRepository.existsByEmail(email)){//todo email 로 중복 검사 실행함.
             log.warn("Email already exists {}", email);
             throw new RuntimeException("Email already exists");
         }

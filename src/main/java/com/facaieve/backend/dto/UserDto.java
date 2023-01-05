@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.modelmapper.ModelMapper;
 
 
 @Data
@@ -27,11 +26,5 @@ public class UserDto {
     String education;
     String Company;
 
-    public static ModelMapper modelMapper = new ModelMapper();
-
-    public UserEntity toUserEntity(UserDto userDto){
-        UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
-        return userEntity;
-    }
 
 }
