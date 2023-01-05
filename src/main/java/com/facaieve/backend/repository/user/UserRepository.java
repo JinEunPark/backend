@@ -5,8 +5,7 @@ import com.facaieve.backend.entity.user.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<UserEntity,Long> {
-    UserEntity findUserEntityByUserEntityId(Long userId);
-
-    boolean existsByEmail(String email);
+    UserEntity findUserEntityById();
+    boolean existsByEmail();
     UserEntity findUserEntityByEmailAndPassword(String email, String password);
 }

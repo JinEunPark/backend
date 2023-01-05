@@ -33,6 +33,7 @@ public class PortfolioEntity extends BaseEntity {
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
     private ArrayList<PortfolioCommentEntity> commentList = new ArrayList<PortfolioCommentEntity>();
 
+
     @OneToMany(mappedBy = "portfolioEntity", fetch = FetchType.LAZY) //cascade = CascadeType.ALL
     private ArrayList<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 태그 매핑
 

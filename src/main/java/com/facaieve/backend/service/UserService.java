@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-
 public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     //입력 값으로 들어온 userEntity 저장 그리고 반환 todo 보안 설정 아직 안함
     public UserEntity create(final UserEntity userEntity){
@@ -29,16 +32,20 @@ public class UserService {
     }
 
 
+    public UserEntity findUserEntity(long userEntityId){
+        return null;
+    }
+
     //credentials 반환함.
     public UserEntity getByCredentials(final String email, final String password){
         return userRepository.findUserEntityByEmailAndPassword(email, password);
     }
 
-    public UserEntity deleteUserEntity(final UserEntity userEntity){
+    public UserEntity deleteUserEntity(final UserEntity deleteUserEntity){
         return null;
     }
 
-    public UserEntity updateUserEntity(UserEntity userEntity){
+    public UserEntity updateUserEntity(UserEntity updateUserEntity){
         return null;
     }
 
