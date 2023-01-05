@@ -1,4 +1,4 @@
-package com.facaieve.backend.service;
+package com.facaieve.backend.service.post;
 
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.PortfolioEntity;

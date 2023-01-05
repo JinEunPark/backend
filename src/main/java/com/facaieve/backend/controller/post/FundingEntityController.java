@@ -1,12 +1,11 @@
-package com.facaieve.backend.controller;
+package com.facaieve.backend.controller.post;
 
 
 
-import com.facaieve.backend.FundingMapper;
-import com.facaieve.backend.dto.FundingDto;
-import com.facaieve.backend.dto.PortfolioDto;
+import com.facaieve.backend.mapper.post.FundingMapper;
+import com.facaieve.backend.dto.post.FundingDto;
 import com.facaieve.backend.entity.post.FundingEntity;
-import com.facaieve.backend.service.FundingEntityService;
+import com.facaieve.backend.service.post.FundingEntityService;
 import com.facaieve.backend.stubDate.FundingStubData;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PortfolioCommentRepository extends JpaRepository<PortfolioCommentEntity,Long> {
+    PortfolioCommentEntity findPortfolioCommentEntityByPortfolioCommentId(Long portfolioCommentId);
 }

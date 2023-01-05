@@ -1,11 +1,11 @@
 package com.facaieve.backend.controller;
 
 
-import com.facaieve.backend.UserMapper;
+import com.facaieve.backend.mapper.UserMapper;
 import com.facaieve.backend.dto.UserDto;
 import com.facaieve.backend.dto.UserDto.PostUserDto;
 import com.facaieve.backend.entity.user.UserEntity;
-import com.facaieve.backend.service.UserService;
+import com.facaieve.backend.service.user.UserService;
 import com.facaieve.backend.stubDate.UserStubData;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

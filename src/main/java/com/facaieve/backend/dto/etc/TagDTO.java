@@ -41,9 +41,10 @@ public class TagDTO {//수정
     }
 
 
-
+    @Setter
     @Getter
     @NoArgsConstructor
+    @AllArgsConstructor
     public static class deleteTagDTO{//삭제할때도 태그 이름으로 삭제함
 
         Long tagId;

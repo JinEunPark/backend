@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FashionPickupCommentRepository extends JpaRepository<FashionPickUpCommentEntity,Long> {
+    FashionPickUpCommentEntity findFashionPickUpCommentEntityByFashionPickupCommentEntityId(Long id);
 }

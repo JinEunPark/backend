@@ -4,7 +4,6 @@ import lombok.*;
 public class MyPickDTO {
     //생성 삭제 이외에는 뭐가 더 필요할지...
 
-    @Data
     @NoArgsConstructor
     @AllArgsConstructor
     @Getter
@@ -13,7 +12,6 @@ public class MyPickDTO {
         Long userId;
     }
 
-    @Data
     @NoArgsConstructor
     @AllArgsConstructor
     @Getter
@@ -24,7 +22,6 @@ public class MyPickDTO {
 
     }
 
-    @Data
     @NoArgsConstructor
     @AllArgsConstructor
     @Getter

@@ -1,10 +1,10 @@
-package com.facaieve.backend.controller;
+package com.facaieve.backend.controller.post;
 
 
-import com.facaieve.backend.FashionPickupMapper;
-import com.facaieve.backend.dto.FashionPickupDto;
+import com.facaieve.backend.mapper.post.FashionPickupMapper;
+import com.facaieve.backend.dto.post.FashionPickupDto;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
-import com.facaieve.backend.service.FashionPickupEntityService;
+import com.facaieve.backend.service.post.FashionPickupEntityService;
 import com.facaieve.backend.stubDate.FashionPuckupStubData;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FundingCommentRepository extends JpaRepository<FundingCommentEntity,Long> {
+    FundingCommentEntity findFundingCommentEntityByFundingCommentId(Long commentId);
 }

@@ -1,6 +1,6 @@
-package com.facaieve.backend;
+package com.facaieve.backend.mapper.post;
 
-import com.facaieve.backend.dto.PortfolioDto;
+import com.facaieve.backend.dto.post.PortfolioDto;
 import com.facaieve.backend.entity.post.PortfolioEntity;
 import com.facaieve.backend.stubDate.PortfolioStubData;
 import org.mapstruct.Mapper;

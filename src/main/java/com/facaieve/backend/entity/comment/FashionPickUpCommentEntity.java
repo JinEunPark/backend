@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class FashionPickUpCommentEntity extends CommentEntity{
+public class FashionPickUpCommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long fashionPickupCommentEntityId;
@@ -37,5 +37,8 @@ public class FashionPickUpCommentEntity extends CommentEntity{
     @JoinColumn(name = "userEntity_Id")
     private UserEntity userEntity;  // 유저 - 패션픽업 댓글 매핑
 
+    public void update(String commentBody){
+        this.commentBody = commentBody;
+    }
 
 }

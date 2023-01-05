@@ -4,15 +4,17 @@ import com.facaieve.backend.entity.etc.MyPickEntity;
 import com.facaieve.backend.entity.post.PortfolioEntity;
 import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.*;
 
 @Entity
 @NoArgsConstructor
-public class PortfolioCommentEntity extends CommentEntity{
+@Data
+public class PortfolioCommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long pf_commentId;
+    Long portfolioCommentId;
     @Column
     Long userId;
     @Column
@@ -32,4 +34,8 @@ public class PortfolioCommentEntity extends CommentEntity{
     @ManyToOne
     @JoinColumn(name = "userEntity_Id")
     private UserEntity userEntity;  // 유저 - 포트폴리오 댓글 매핑
+
+    public void update(String commentBody){
+        this.commentBody = commentBody;
+    }
 }

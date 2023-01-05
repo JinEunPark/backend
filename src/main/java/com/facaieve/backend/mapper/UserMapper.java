@@ -1,4 +1,4 @@
-package com.facaieve.backend;
+package com.facaieve.backend.mapper;
 
 import com.facaieve.backend.dto.UserDto;
 import com.facaieve.backend.entity.user.UserEntity;

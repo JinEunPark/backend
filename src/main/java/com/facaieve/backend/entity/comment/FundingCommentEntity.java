@@ -5,6 +5,7 @@ import com.facaieve.backend.entity.post.FundingEntity;
 import com.facaieve.backend.entity.etc.MyPickEntity;
 import com.facaieve.backend.entity.user.UserEntity;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -12,7 +13,8 @@ import java.util.List;
 
 @Entity
 @NoArgsConstructor
-public class FundingCommentEntity extends CommentEntity{
+@Data
+public class FundingCommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long fundingCommentId;
@@ -34,4 +36,7 @@ public class FundingCommentEntity extends CommentEntity{
     @ManyToOne
     @JoinColumn(name = "userEntity_Id")
     private UserEntity userEntity;  // 유저 - 펀딩 댓글 매핑
+    public void update(String commentBody){
+        this.commentBody = commentBody;
+    }
 }
