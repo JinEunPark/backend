@@ -1,7 +1,7 @@
 package com.facaieve.backend.stubDate;
 
 import com.facaieve.backend.entity.basetime.BaseEntity;
-import jakarta.persistence.Column;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

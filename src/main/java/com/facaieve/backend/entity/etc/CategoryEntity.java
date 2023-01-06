@@ -2,13 +2,10 @@ package com.facaieve.backend.entity.etc;
 
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import lombok.Getter;
 import lombok.Setter;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Getter

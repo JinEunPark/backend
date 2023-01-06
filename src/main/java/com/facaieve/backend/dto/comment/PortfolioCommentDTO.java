@@ -1,9 +1,6 @@
 package com.facaieve.backend.dto.comment;
 
-import com.facaieve.backend.entity.basetime.BaseEntity;
-import com.facaieve.backend.entity.etc.MyPickEntity;
-import com.facaieve.backend.entity.post.PortfolioEntity;
-import com.facaieve.backend.entity.user.UserEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

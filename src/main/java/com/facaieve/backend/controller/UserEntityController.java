@@ -1,10 +1,11 @@
 package com.facaieve.backend.controller;
 
 
-import com.facaieve.backend.mapper.UserMapper;
+
 import com.facaieve.backend.dto.UserDto;
 import com.facaieve.backend.dto.UserDto.PostUserDto;
 import com.facaieve.backend.entity.user.UserEntity;
+import com.facaieve.backend.mapper.user.UserMapper;
 import com.facaieve.backend.service.user.UserService;
 import com.facaieve.backend.stubDate.UserStubData;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,7 @@ public class UserEntityController {
         log.info("신규 유저를 등록합니다.");
 
         // 컨트롤러단만 작성하기 위해 Stub 데이터로 대체
-        return new ResponseEntity(userMapper.userStubEntityToToUserEntity(userStubData), HttpStatus.CREATED);
+        return new ResponseEntity(userMapper.userStubEntityToToUserStubEntity(userStubData), HttpStatus.CREATED);
     }
 
 
@@ -60,7 +61,7 @@ public class UserEntityController {
 //        return new ResponseEntity( userMapper.userEntityToResponseDto(foundUserEntity), HttpStatus.OK);
 
         // 컨트롤러단만 작성하기 위해 Stub 데이터로 대체
-        return new ResponseEntity(userMapper.userStubEntityToToUserEntity(userStubData), HttpStatus.OK);
+        return new ResponseEntity(userMapper.userStubEntityToToUserStubEntity(userStubData), HttpStatus.OK);
 
     }
 

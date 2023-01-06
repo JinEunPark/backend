@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class UserService {
-
-    private final UserRepository userRepository;
-
+    UserRepository userRepository;
 
     //입력 값으로 들어온 userEntity 저장 그리고 반환 todo 보안 설정 아직 안함
     public UserEntity create(final UserEntity userEntity){

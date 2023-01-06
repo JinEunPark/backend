@@ -1,9 +1,6 @@
 package com.facaieve.backend.entity.comment;
 import com.facaieve.backend.entity.basetime.BaseEntity;
 import com.facaieve.backend.entity.etc.MyPickEntity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;

@@ -6,12 +6,12 @@ import com.facaieve.backend.entity.etc.MyPickEntity;
 import com.facaieve.backend.entity.etc.TagEntity;
 import com.facaieve.backend.entity.comment.FundingCommentEntity;
 import com.facaieve.backend.entity.user.UserEntity;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Date;
 
 @Entity
@@ -35,16 +35,16 @@ public class FundingEntity extends BaseEntity {
 
 
     @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
-    private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
+    private List<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
 
     @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
-    private ArrayList<FundingCommentEntity> commentList = new ArrayList<FundingCommentEntity>();  // 펀딩 엔티티 - 펀딩 댓글 매핑
+    private List<FundingCommentEntity> commentList = new ArrayList<FundingCommentEntity>();  // 펀딩 엔티티 - 펀딩 댓글 매핑
 
     @OneToMany(mappedBy = "fundingEntity", cascade = CascadeType.ALL)
-    private ArrayList<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 펀딩 - 태그 매핑
+    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 펀딩 - 태그 매핑
 
     @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
-    private ArrayList<CategoryEntity> categoryEntities = new ArrayList<CategoryEntity>();  // 펀딩 - 카테코리 매핑
+    private List<CategoryEntity> categoryEntities = new ArrayList<CategoryEntity>();  // 펀딩 - 카테코리 매핑
 
     @ManyToOne
     @JoinColumn(name = "userEntity_Id")

@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("category")
 @AllArgsConstructor
-
 public class CategoryController {
 
-    @Autowired
+
     CategoryService categoryService;
     CategoryMapper categoryMapper;
 

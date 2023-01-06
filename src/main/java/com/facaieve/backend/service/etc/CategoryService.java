@@ -4,7 +4,6 @@ import com.facaieve.backend.entity.etc.CategoryEntity;
 import com.facaieve.backend.repository.etc.CategoryRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CategoryService {
 
-    @Autowired
     CategoryRepository categoryRepository;
 
     public CategoryEntity createCategoryEntity(CategoryEntity categoryEntity){

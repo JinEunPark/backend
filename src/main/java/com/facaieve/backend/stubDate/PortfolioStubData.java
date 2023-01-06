@@ -1,6 +1,6 @@
 package com.facaieve.backend.stubDate;
 
-import jakarta.persistence.Column;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
