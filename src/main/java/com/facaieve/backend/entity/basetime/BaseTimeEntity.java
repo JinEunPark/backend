@@ -1,5 +1,4 @@
 package com.facaieve.backend.entity.basetime;
-
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

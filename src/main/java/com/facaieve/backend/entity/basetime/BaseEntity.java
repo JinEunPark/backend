@@ -1,6 +1,5 @@
 package com.facaieve.backend.entity.basetime;
 
-
 import javax.persistence.*;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedBy;

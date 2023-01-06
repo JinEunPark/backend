@@ -4,9 +4,7 @@ import com.facaieve.backend.entity.basetime.BaseEntity;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
 import com.facaieve.backend.entity.post.PortfolioEntity;
-//import jakarta.persistence.*;
-import javax.persistence.*;
-import lombok.Getter;
+import javax.persistence.*;import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -35,5 +33,11 @@ public class TagEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "portfolio_Entity_Id")
     PortfolioEntity portfolioEntity;
+
+    //update method 를 entity 내부에다가 구현함.
+    public void update(String tagName, String description){
+        this.tagName = tagName;
+        this.description = description;
+    }
 
 }

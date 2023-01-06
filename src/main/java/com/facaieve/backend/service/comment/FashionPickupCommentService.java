@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,6 +62,7 @@ public class FashionPickupCommentService implements CommentService<FashionPickUp
     }
 
     //사실 변경하는 거는 그냥 가져와서 새로운거 다시 넣고 반환할거임
+    @Transactional
     public FashionPickUpCommentEntity modifyComment(FashionPickUpCommentEntity fashionPickUpCommentEntity){
 
         if(fashionPickupCommentRepository.existsById(fashionPickUpCommentEntity.getFashionPickupCommentEntityId())){

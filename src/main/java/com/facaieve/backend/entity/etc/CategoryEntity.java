@@ -1,15 +1,17 @@
 package com.facaieve.backend.entity.etc;
-
+import javax.persistence.*;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
 
-import lombok.Getter;
-import lombok.Setter;
-import javax.persistence.*;
+import lombok.*;
 
 @Entity
+
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class CategoryEntity {
 
     @Id

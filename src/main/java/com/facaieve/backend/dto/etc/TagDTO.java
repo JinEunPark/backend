@@ -8,7 +8,6 @@ public class TagDTO {//수정
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-
     public static class ResponseTagDTO {
 
         String tagName;
@@ -16,6 +15,7 @@ public class TagDTO {//수정
         String description;
 
     }
+
 
     @Getter
     @Setter
@@ -31,6 +31,7 @@ public class TagDTO {//수정
     @Setter
     @AllArgsConstructor
     @NoArgsConstructor
+    //patch 에서도 사용함.
     public static class GetTagDTO {//뭔가 필요할 거 같아서 만듬
         Long tagId;
 
@@ -52,7 +53,6 @@ public class TagDTO {//수정
         String tagName;
 
         String description;
-
     }
 
 

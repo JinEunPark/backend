@@ -22,6 +22,15 @@ public class MyPickDTO {
 
     }
 
+//    @NoArgsConstructor
+//    @AllArgsConstructor
+//    @Getter
+//    @Setter
+//    public static class getMyPickDTO{
+//        Long userId;
+//        Long myPickId;
+//    }
+
     @NoArgsConstructor
     @AllArgsConstructor
     @Getter

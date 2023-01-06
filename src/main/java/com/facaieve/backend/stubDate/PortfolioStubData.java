@@ -1,6 +1,5 @@
 package com.facaieve.backend.stubDate;
 
-import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 

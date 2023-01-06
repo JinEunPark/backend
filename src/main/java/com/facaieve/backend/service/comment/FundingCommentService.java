@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 //todo 찬일님과 구현방식 상의해서 변경할거 변경할 수 있게 만들기
 @Service
 @Slf4j
@@ -39,6 +41,8 @@ public class FundingCommentService implements CommentService<FundingCommentEntit
     }
 
     @Override
+    @Transactional
+
     public FundingCommentEntity modifyComment(FundingCommentEntity fundingCommentEntity) {
 
         if(fundingCommentRepository.existsById(fundingCommentEntity.getFundingCommentId())){

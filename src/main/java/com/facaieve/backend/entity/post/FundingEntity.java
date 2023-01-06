@@ -6,13 +6,14 @@ import com.facaieve.backend.entity.etc.MyPickEntity;
 import com.facaieve.backend.entity.etc.TagEntity;
 import com.facaieve.backend.entity.comment.FundingCommentEntity;
 import com.facaieve.backend.entity.user.UserEntity;
-import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
