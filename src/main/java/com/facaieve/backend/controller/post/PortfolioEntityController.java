@@ -1,4 +1,4 @@
-package com.facaieve.backend.controller;
+package com.facaieve.backend.controller.post;
 
 
 import com.facaieve.backend.mapper.post.PortfolioMapper;

@@ -2,9 +2,7 @@ package com.facaieve.backend.stubDate;
 
 import com.facaieve.backend.Constant.UserActive;
 import com.facaieve.backend.entity.basetime.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

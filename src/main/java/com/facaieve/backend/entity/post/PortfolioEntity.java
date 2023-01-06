@@ -5,10 +5,10 @@ import com.facaieve.backend.entity.etc.MyPickEntity;
 import com.facaieve.backend.entity.etc.TagEntity;
 import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import com.facaieve.backend.entity.user.UserEntity;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
+import java.util.*;
 
 @Entity
 @Getter
@@ -28,14 +28,14 @@ public class PortfolioEntity extends BaseEntity {
     int views;
 
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
-    private ArrayList<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
+    private List<MyPickEntity> myPick = new ArrayList<MyPickEntity>();
 
     @OneToMany(mappedBy = "portfolioEntity",fetch = FetchType.LAZY)
-    private ArrayList<PortfolioCommentEntity> commentList = new ArrayList<PortfolioCommentEntity>();
+    private List<PortfolioCommentEntity> commentList = new ArrayList<PortfolioCommentEntity>();
 
 
     @OneToMany(mappedBy = "portfolioEntity", fetch = FetchType.LAZY) //cascade = CascadeType.ALL
-    private ArrayList<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 태그 매핑
+    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 태그 매핑
 
     @ManyToOne
     @JoinColumn(name = "userEntity_Id")

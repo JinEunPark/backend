@@ -2,7 +2,7 @@ package com.facaieve.backend.dto.etc;
 
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 public class CategoryDTO {

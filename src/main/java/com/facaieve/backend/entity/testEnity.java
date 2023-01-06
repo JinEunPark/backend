@@ -1,6 +1,6 @@
 package com.facaieve.backend.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 

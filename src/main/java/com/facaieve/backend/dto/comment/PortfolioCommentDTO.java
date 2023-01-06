@@ -1,6 +1,6 @@
 package com.facaieve.backend.dto.comment;
 
-import jakarta.persistence.Column;
+import javax.persistence.*;
 
 public class PortfolioCommentDTO {
 

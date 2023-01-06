@@ -1,13 +1,15 @@
 package com.facaieve.backend.dto;
 
-import jakarta.persistence.Column;
+import javax.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 public class PortfolioDto {
 
 
 
     @Getter
+    @NoArgsConstructor
     public static class PostPortfolioDtoDto{
 
         String title;
@@ -17,6 +19,7 @@ public class PortfolioDto {
     }
 
     @Getter
+    @NoArgsConstructor
     public static class PatchPortfolioDtoDto{
 
         long portfolioEntityId;
@@ -26,18 +29,21 @@ public class PortfolioDto {
     }
 
     @Getter
+    @NoArgsConstructor
     public static class GetPortfolioDtoDto{
 
         long portfolioEntityId;
     }
 
     @Getter
+    @NoArgsConstructor
     public static class DeletePortfolioDtoDto{
 
         long portfolioEntityId;
     }
 
     @Getter
+    @NoArgsConstructor
     public static class ResponsePortfolioDto{
 
         long portfolioEntityId;
