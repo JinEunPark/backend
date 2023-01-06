@@ -2,9 +2,9 @@ package com.facaieve.backend.controller.post;
 
 
 import com.facaieve.backend.mapper.post.PortfolioMapper;
-import com.facaieve.backend.dto.PortfolioDto;
+import com.facaieve.backend.dto.post.PortfolioDto;
 import com.facaieve.backend.entity.post.PortfolioEntity;
-import com.facaieve.backend.service.PortfolioEntityService;
+import com.facaieve.backend.service.post.PortfolioEntityService;
 import com.facaieve.backend.stubDate.PortfolioStubData;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

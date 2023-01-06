@@ -1,4 +1,4 @@
-package com.facaieve.backend.dto.reponse;
+package com.facaieve.backend.dto.multi;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

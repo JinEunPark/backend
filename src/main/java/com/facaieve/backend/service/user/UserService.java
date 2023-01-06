@@ -1,4 +1,4 @@
-package com.facaieve.backend.service;
+package com.facaieve.backend.service.user;
 
 import com.facaieve.backend.entity.user.UserEntity;
 import com.facaieve.backend.repository.user.UserRepository;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class UserService {
-
     UserRepository userRepository;
 
     //입력 값으로 들어온 userEntity 저장 그리고 반환 todo 보안 설정 아직 안함

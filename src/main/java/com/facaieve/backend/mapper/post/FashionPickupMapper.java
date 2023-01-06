@@ -1,6 +1,6 @@
 package com.facaieve.backend.mapper.post;
 
-import com.facaieve.backend.dto.FashionPickupDto;
+import com.facaieve.backend.dto.post.FashionPickupDto;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.stubDate.FashionPuckupStubData;
 import org.mapstruct.Mapper;

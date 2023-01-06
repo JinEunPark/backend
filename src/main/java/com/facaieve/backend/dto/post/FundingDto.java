@@ -1,4 +1,4 @@
-package com.facaieve.backend.dto;
+package com.facaieve.backend.dto.post;
 
 
 import javax.persistence.*;
