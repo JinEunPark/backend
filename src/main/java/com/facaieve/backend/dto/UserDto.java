@@ -48,6 +48,9 @@ public class UserDto {
     @NoArgsConstructor
     @Schema(description = "회원 정보 수정 DTO")
     public static class PatchUserDto{
+
+        @Schema(description = "사용자 활동명")
+        long userEntityId;
         @Schema(description = "사용자 활동명")
         String displayName;
 
@@ -110,6 +113,12 @@ public class UserDto {
         @Schema(description = "유저 이메일")
         String email;
 
+        public static ResponseUserDto of(UserEntity userEntity) {
+            return new ResponseUserDto(userEntity.getDisplayName(), userEntity.getEmail());
+        }
     }
+
+
+
 
 }
