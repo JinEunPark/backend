@@ -42,6 +42,8 @@ public class UserEntityController {
             @ApiResponse(responseCode = "404", description = "NOT FOUND !!"),
             @ApiResponse(responseCode = "500", description = "서버에서 에러가 발생하였습니다.")
     })
+
+
     @PostMapping("/post")// 유저 등록
     public ResponseEntity postUserEntity(@Parameter(description = "POST DTO", required = true, example = "문서 참고") @RequestBody PostUserDto postUserDto){
 
@@ -53,6 +55,8 @@ public class UserEntityController {
         // 컨트롤러단만 작성하기 위해 Stub 데이터로 대체
         return new ResponseEntity(userMapper.userStubEntityToToUserStubEntity(testStub), HttpStatus.CREATED);
     }
+
+
 
     @Operation(summary = "유저 정보 수정 메서드 예제", description = "json 바디값을 통한 회원 정보 수정 메서드")//대상 api의 대한 설명을 작성하는 어노테이션
     @ApiResponses({
