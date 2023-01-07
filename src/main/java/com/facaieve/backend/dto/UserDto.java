@@ -106,7 +106,7 @@ public class UserDto {
     @Schema(description = "회원 Response")
     public static class ResponseUserDto{
 
-        @Schema(description = "유저 이메일")
+        @Schema(description = "유저 닉네임")
         String displayName;
 
         @Email

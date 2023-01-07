@@ -27,4 +27,39 @@ public class CategoryDTO {
         String categoryName;
     }
 
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    public static class PostCategoryDto {
+        String categoryName;
+    }
+
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    public static class PatchCategoryDto {
+        String categoryName;
+    }
+
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    public static class GetCategoryDto {
+        String categoryName;
+    }
+
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    public static class DeleteCategoryDto {
+        String categoryName;
+    }
 }

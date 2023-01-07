@@ -29,6 +29,14 @@ public class TagDTO {//수정
 
     @Getter
     @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class PatchTagDTO {//생성
+        String tagName;
+    }
+
+    @Getter
+    @Setter
     @AllArgsConstructor
     @NoArgsConstructor
     //patch 에서도 사용함.
@@ -46,7 +54,7 @@ public class TagDTO {//수정
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class deleteTagDTO{//삭제할때도 태그 이름으로 삭제함
+    public static class deleteTagDTO{//삭제할때도 카테고리 이름으로 삭제함
 
         Long tagId;
 

@@ -36,7 +36,7 @@ public class PortfolioEntity extends BaseEntity {
 
 
     @OneToMany(mappedBy = "portfolioEntity", fetch = FetchType.LAZY) //cascade = CascadeType.ALL
-    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 태그 매핑
+    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 포트폴리오 - 카테고리 매핑
 
     @ManyToOne
     @JoinColumn(name = "userEntity_Id")

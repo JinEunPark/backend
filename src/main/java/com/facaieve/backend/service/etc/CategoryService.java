@@ -40,9 +40,9 @@ public class CategoryService {
 
     }
 
-    public CategoryEntity getCategory(String categoryName){
-        if(categoryRepository.existsByCategoryName(categoryName)){
-            return categoryRepository.findCategoryEntityByCategoryName(categoryName);
+    public CategoryEntity getCategory(CategoryEntity categoryEntity){
+        if(categoryRepository.existsByCategoryName(categoryEntity.getCategoryName())){
+            return categoryRepository.findCategoryEntityByCategoryName(categoryEntity.getCategoryName());
         }else{
             throw new RuntimeException("there is no kind of category name");
         }

@@ -42,7 +42,7 @@ public class FundingEntity extends BaseEntity {
     private List<FundingCommentEntity> commentList = new ArrayList<FundingCommentEntity>();  // 펀딩 엔티티 - 펀딩 댓글 매핑
 
     @OneToMany(mappedBy = "fundingEntity", cascade = CascadeType.ALL)
-    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 펀딩 - 태그 매핑
+    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 펀딩 - 카테고리 매핑
 
     @OneToMany(mappedBy = "fundingEntity",fetch = FetchType.LAZY)
     private List<CategoryEntity> categoryEntities = new ArrayList<CategoryEntity>();  // 펀딩 - 카테코리 매핑

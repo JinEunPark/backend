@@ -36,7 +36,7 @@ public class FashionPickupEntity extends BaseEntity {
     private List<FashionPickUpCommentEntity> commentList = new ArrayList<FashionPickUpCommentEntity>();  // 패션픽업 - FP 댓글 매핑
 
     @OneToMany(mappedBy = "fashionPickupEntity", cascade = CascadeType.ALL)
-    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 패션픽업 - 태그 매핑
+    private List<TagEntity> tagEntities = new ArrayList<TagEntity>();  // 패션픽업 - 카테고리 매핑
 
     @OneToMany(mappedBy = "fashionPickupEntity",fetch = FetchType.LAZY)
     private List<CategoryEntity> categoryEntities = new ArrayList<CategoryEntity>();  // 패션픽업 - 카테코리 매핑

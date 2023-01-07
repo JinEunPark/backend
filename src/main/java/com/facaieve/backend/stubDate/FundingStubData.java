@@ -1,11 +1,10 @@
 package com.facaieve.backend.stubDate;
 
 import com.facaieve.backend.entity.basetime.BaseEntity;
-import javax.persistence.*;import lombok.AllArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.Date;
 
 @Getter
@@ -20,4 +19,5 @@ public class FundingStubData extends BaseEntity {
     Date dueDate;
     Long targetPrice = 50000000L;//펀딩 목표금액
     Long fundedPrice = 30000000L;//펀딩된 현재 금액
+
 }

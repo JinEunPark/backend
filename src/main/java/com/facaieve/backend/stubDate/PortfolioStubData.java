@@ -1,5 +1,6 @@
 package com.facaieve.backend.stubDate;
 
+import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,7 +1,10 @@
 package com.facaieve.backend.dto.post;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -9,6 +12,9 @@ import java.util.Date;
 public class FundingDto {
 
     @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class PostFundingDto{
 
         String title;
@@ -23,6 +29,9 @@ public class FundingDto {
 
     }
     @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class PatchFundingDto{
 
         String title;
@@ -37,16 +46,25 @@ public class FundingDto {
 
     }
     @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class GetFundingDto{
         long fundingEntityId;
     }
     @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class DeleteFundingDto{
 
         long fundingEntityId;
 
     }
     @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class ResponseFundingDto{
 
         String title;
