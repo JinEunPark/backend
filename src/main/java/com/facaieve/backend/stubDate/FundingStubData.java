@@ -1,8 +1,7 @@
 package com.facaieve.backend.stubDate;
 
 import com.facaieve.backend.entity.basetime.BaseEntity;
-import javax.persistence.*;
-import lombok.AllArgsConstructor;
+import javax.persistence.*;import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

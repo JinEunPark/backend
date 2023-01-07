@@ -9,4 +9,6 @@ public interface TagRepository extends JpaRepository<TagEntity,Long> {
 
     boolean existsByTagName(String tagName);//중복 방지를 위해서 생성함.
     TagEntity findByTagName(String tagName);
+    TagEntity findTagEntityByTagId(Long tagId);//tagId로 찾음
+
 }

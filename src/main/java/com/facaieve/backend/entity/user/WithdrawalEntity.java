@@ -2,10 +2,9 @@ package com.facaieve.backend.entity.user;
 
 import com.facaieve.backend.Constant.UserActive;
 import com.facaieve.backend.entity.basetime.BaseEntity;
+
 import javax.persistence.*;
-
 import lombok.*;
-
 
 @NoArgsConstructor
 @Entity

@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.HTML;
+import javax.transaction.Transactional;
+
 @Service
 @AllArgsConstructor
 public class TagService {
@@ -25,6 +28,23 @@ public class TagService {
         }
     }
 
+    @Transactional
+    public TagEntity modifyTagEntity(TagEntity tagEntity){
+
+        if(tagRepository.existsByTagName(tagEntity.getTagName())){
+
+            TagEntity tagEntityChanged = tagRepository.findTagEntityByTagId(tagEntity.getTagId());
+            tagEntityChanged.update(tagEntity.getTagName(),tagEntity.getDescription());
+            //JPA context에 의해서 자동으로 저장됨.
+
+            return tagEntityChanged;//변경된 객체를 반환함.
+
+        }else{
+            throw new RuntimeException("there is no kind of tagEntity" + tagEntity.getTagName());
+        }
+
+    }
+
     public TagEntity getTagEntityByTagName(String tagName){
 
         if(tagRepository.existsByTagName(tagName)){
@@ -32,7 +52,7 @@ public class TagService {
             return tagEntity;
         }else{
             //ex
-            throw new RuntimeException("there no kind of tag!");
+            throw new RuntimeException("there is no kind of tag!");
         }
 
     }

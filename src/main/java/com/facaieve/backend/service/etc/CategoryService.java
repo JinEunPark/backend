@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.util.List;
+
 @Service
 @Slf4j
 @AllArgsConstructor
@@ -22,11 +25,34 @@ public class CategoryService {
             return savedCategoryEntity;
         }
     }
+    @Transactional
+    public CategoryEntity modifyCategoryEntity(CategoryEntity categoryEntity){
+        if(categoryRepository.existsByCategoryId(categoryEntity.getCategoryId())){
+            CategoryEntity categoryEntityChange =
+                    categoryRepository.findCategoryEntityByCategoryId(categoryEntity.getCategoryId());
+            categoryEntityChange.setCategoryName(categoryEntity.getCategoryName());
+            //JPA 영속성 컨텍스트로 저장함.
+            return categoryEntityChange;
 
+        }else{
+            throw new RuntimeException("there is no exists category");
+        }
 
-    public CategoryEntity deleteCategoryEntity(CategoryEntity categoryEntity){
+    }
+
+    public CategoryEntity getCategory(String categoryName){
+        if(categoryRepository.existsByCategoryName(categoryName)){
+            return categoryRepository.findCategoryEntityByCategoryName(categoryName);
+        }else{
+            throw new RuntimeException("there is no kind of category name");
+        }
+    }
+
+    public void deleteCategoryEntity(CategoryEntity categoryEntity){
+
         if(categoryRepository.existsByCategoryName(categoryEntity.getCategoryName())){
-            return categoryRepository.deleteCategoryEntityByCategoryName(categoryEntity.getCategoryName());
+            CategoryEntity category = categoryRepository.findCategoryEntityByCategoryName(categoryEntity.getCategoryName());
+             categoryRepository.deleteCategoryEntityByCategoryId(category.getCategoryId());
         }else{
             throw new RuntimeException("there is no kind of category");
         }

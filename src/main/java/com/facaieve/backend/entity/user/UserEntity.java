@@ -9,58 +9,40 @@ import com.facaieve.backend.entity.comment.PortfolioCommentEntity;
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
 import com.facaieve.backend.entity.post.PortfolioEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.swagger.v3.oas.annotations.media.Schema;
-import javax.persistence.*;
-import lombok.Getter;
+import javax.persistence.*;import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-
 import java.util.*;
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "UserEntity")
-@Schema(description = "사용자")
-@ToString(of = {"userId", "userName", "nickName", "email"})
 public class UserEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//개별 엔티티 적용
-    @Schema(description = "유저 식별ID")
     Long userEntityId;
     @Column
-    @Schema(description = "사용자 활동명")
     String displayName;
     @Column
-    @Schema(description = "유저 이메일")
     String email;
     @Column
-    @Schema(description = "유저 비밀번호")
     String password;
     @Column
-    @Schema(description = "시,도")
     String state;
     @Column
-    @Schema(description = "시군구")
     String city;
     @Column
-    @Schema(description = "간단한 자기소개")
     String userInfo;
     @Column
-    @Schema(description = "커리어")
     String career;
     @Column
-    @Schema(description = "학력 및 교육사항")
     String education;
     @Column
-    @Schema(description = "재직회사")
     String Company;
 
     @Enumerated(value = EnumType.STRING)
-    @Schema(description = "유저활동 상태")
     UserActive userActive;
 
     //패션픽업 댓글, 펀딩 댓글, 포폴 댓글 엔티티 매핑
@@ -85,11 +67,9 @@ public class UserEntity extends BaseEntity {
 
     @ManyToOne
     @JoinColumn
-    @JsonIgnore
     private UserEntity userFollowing = this; // 팔로잉 팔로우 정보 저장 위한 셀프 참조
     @ManyToOne
     @JoinColumn
-    @JsonIgnore
     private UserEntity userFollower = this;
 
     @OneToMany(mappedBy = "userFollowing", cascade = CascadeType.ALL)

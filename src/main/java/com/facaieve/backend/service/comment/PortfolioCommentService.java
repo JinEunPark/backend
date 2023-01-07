@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 //todo 찬일님과 구현방식 상의해서 변경할거 변경할 수 있게 만들기
 
 @Service
@@ -40,6 +42,8 @@ public class PortfolioCommentService implements CommentService<PortfolioCommentE
     }
 
     @Override
+    @Transactional
+
     public PortfolioCommentEntity modifyComment(PortfolioCommentEntity portfolioCommentEntity) {
         if(portfolioCommentRepository.existsById(portfolioCommentEntity.getPortfolioCommentId())){
 

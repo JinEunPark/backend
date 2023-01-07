@@ -2,7 +2,6 @@ package com.facaieve.backend.dto.etc;
 
 import com.facaieve.backend.entity.post.FashionPickupEntity;
 import com.facaieve.backend.entity.post.FundingEntity;
-import javax.persistence.*;
 import lombok.*;
 
 public class CategoryDTO {
@@ -12,6 +11,7 @@ public class CategoryDTO {
     @Setter
     @AllArgsConstructor
     @NoArgsConstructor
+    @Builder
     public static class ResponseCategoryDTO{//응답
         String categoryName;
     }
@@ -21,7 +21,9 @@ public class CategoryDTO {
     @Setter
     @AllArgsConstructor
     @NoArgsConstructor
+    @Builder
     public static class RequestCategoryDTO{//요청
+        Long categoryId;
         String categoryName;
     }
 
