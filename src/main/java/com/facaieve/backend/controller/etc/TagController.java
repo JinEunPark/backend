@@ -77,7 +77,6 @@ public class TagController {
 //        TagEntity postingTagEntity = tagMapper.postTagDtoToTagEntity(postTagDTO);
 //        TagDTO.ResponseTagDTO responseTagDTO = tagMapper.tagEntityToResponseTagDTO(tagService.createTagEntity(postingTagEntity));
 //        return new ResponseEntity(responseTagDTO,HttpStatus.CREATED);
-
         TagStubData stubData = new TagStubData();
         return new ResponseEntity(tagMapper.tagStubDataToStubTagEntity(stubData), HttpStatus.OK);
     }
@@ -91,7 +90,6 @@ public class TagController {
     })
     @DeleteMapping("/delete")
     public ResponseEntity deleteTag(@RequestBody TagDTO.deleteTagDTO deleteTagDTO){
-
 //        tagService.deleteTagEntityService(tagService.getTagEntityByTagName(deleteTagDTO.getTagName()));
 //        return new ResponseEntity(HttpStatus.OK);
         TagStubData stubData = new TagStubData();
