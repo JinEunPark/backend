@@ -25,11 +25,15 @@ public class CategoryService {
             return savedCategoryEntity;
         }
     }
+
+
     @Transactional
     public CategoryEntity modifyCategoryEntity(CategoryEntity categoryEntity){
         if(categoryRepository.existsByCategoryId(categoryEntity.getCategoryId())){
+
             CategoryEntity categoryEntityChange =
                     categoryRepository.findCategoryEntityByCategoryId(categoryEntity.getCategoryId());
+
             categoryEntityChange.setCategoryName(categoryEntity.getCategoryName());
             //JPA 영속성 컨텍스트로 저장함.
             return categoryEntityChange;

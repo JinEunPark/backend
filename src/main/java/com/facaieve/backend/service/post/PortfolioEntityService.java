@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PortfolioEntityService {
 
-
     public PortfolioEntity createPortfolioEntity(PortfolioEntity PortfolioEntity){
         return null;
     };

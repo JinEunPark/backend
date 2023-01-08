@@ -42,7 +42,6 @@ public class FundingCommentService implements CommentService<FundingCommentEntit
 
     @Override
     @Transactional
-
     public FundingCommentEntity modifyComment(FundingCommentEntity fundingCommentEntity) {
 
         if(fundingCommentRepository.existsById(fundingCommentEntity.getFundingCommentId())){
